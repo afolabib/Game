@@ -1,12 +1,13 @@
 let userscore = 0;
 let compscore = 0;
 const userscore_span = document.getElementById("user_score");
-const compscore_span = document.getElementById("user_score");
+const compscore_span = document.getElementById("comp_score");
 const score_board = document.querySelector(".score_board");
 const outcome_div = document.querySelector(".outcome > p");
 const rock_p = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
+const choices_Array = {'r':'Rock','p':'Paper','s':'Scissors'};
 
 
 function getComputerChoice() {
@@ -22,11 +23,18 @@ function win(userChoice, ComputerChoice) {
     outcome_p.innerHTML = userChoice + "beats" + ComputerChoice
 }
 
-function lose() {
+function lose(userChoice, ComputerChoice) {
+    compscore++;
+    userscore_span.innerHTML = userscore
+    compscore_span.innerHTML =compscore;
+    outcome_p.innerHTML = userChoice + "beats" + ComputerChoice
     
 }
 
-function draw() {
+function draw(userChoice, ComputerChoice) {
+    userscore_span.innerHTML = userscore
+    compscore_span.innerHTML =compscore;
+    outcome_p.innerHTML = userChoice + "beats" + ComputerChoice
     
 }
 function game(userChoice) {
