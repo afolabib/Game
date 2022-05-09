@@ -1,10 +1,10 @@
-const userscore = 0;
-const compscore = 0;
+let userscore = 0;
+let compscore = 0;
 const userscore_span = document.getElementById("user_score");
 const compscore_span = document.getElementById("user_score");
 const score_board = document.querySelector(".score_board");
-const outcome_div = document.querySelector(".outcome");
-const rock_div = document.getElementById("rock");
+const outcome_div = document.querySelector(".outcome > p");
+const rock_p = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
@@ -15,8 +15,43 @@ function getComputerChoice() {
     return choices[randomNumber]
 }
 
-function game(_userchoice) {
-    const getComputerChoice = getComputerChoice();
+function win(userChoice, ComputerChoice) {
+    userscore++;
+    userscore_span.innerHTML = userscore
+    compscore_span.innerHTML =compscore;
+    outcome_p.innerHTML = userChoice + "beats" + ComputerChoice
+}
+
+function lose() {
+    
+}
+
+function draw() {
+    
+}
+function game(userChoice) {
+    const ComputerChoice = getComputerChoice();
+    switch (userChoice + ComputerChoice) {
+        case "pr":
+        case "rs":
+        case "sp":
+            win(userChoice, ComputerChoice)
+            break;
+        case "rp":
+        case "sr":
+        case "ps":
+            lose(userChoice, ComputerChoice)
+            break;
+        case "rr":
+        case "ss":
+        case "pp":
+            console.log("draw")
+            draw(userChoice, ComputerChoice)
+        
+    }
+        
+
+
 
 }
 
@@ -34,4 +69,3 @@ function main() {
 }) 
 }
 
-main();
