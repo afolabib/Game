@@ -11,16 +11,16 @@ const choices_Array = {'r':'Rock','p':'Paper','s':'Scissors'};
 
 
 function getComputerChoice() {
-    const choices = ['rock', 'paper' , 'scissors'];
+    const choices = ['r', 'p' , 's';
     const randomNumber = Math.floor(Math.random() *3);
     return choices[randomNumber]
 }
 
 function win(userChoice, ComputerChoice) {
-    userscore++;
+    userscore++;    
     userscore_span.innerHTML = userscore
     compscore_span.innerHTML =compscore;
-    outcome_p.innerHTML = userChoice + "beats" + ComputerChoice
+    outcome_div.innerHTML = choices_Array[userChoice] + " beats " + choices_Array[ComputerChoice]+'. You Win.'
 }
 
 function lose(userChoice, ComputerChoice) {
